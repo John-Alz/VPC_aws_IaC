@@ -68,7 +68,7 @@ resource "aws_route_table_association" "nequi_rtb_private_association" {
 
 resource "aws_vpc_endpoint" "nequi_vpce_s3" {
   vpc_id            = aws_vpc.main_vpc.id
-  service_name      = "com.amazonaws.${data.aws_region.current.name}.s3"
+  service_name      = "com.amazonaws.${data.aws_region.current.id}.s3"
   vpc_endpoint_type = "Gateway"
 
   route_table_ids = [aws_route_table.nequi_rtb_private.id]
